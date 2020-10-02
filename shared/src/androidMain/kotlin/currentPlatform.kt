@@ -1,0 +1,1 @@
+actual fun currentPlatform(): String = "ANDROID"
