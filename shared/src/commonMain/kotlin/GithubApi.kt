@@ -12,7 +12,7 @@ class GithubApi {
         HttpClient(engine())
             .use { client ->
                 GlobalScope.launch(dispatcher()) {
-                    block(client.get("https://api.github.com/users/azetor"))
+                    block(client.get("https://api.github.com/users"))
                 }
             }
     }

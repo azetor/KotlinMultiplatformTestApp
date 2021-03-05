@@ -9,22 +9,22 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        layout
-            .addView(
-                TextView(this)
-                    .apply {
-                        text = "LADING..."
-                        GithubApi()
-                            .users { user ->
-                                runOnUiThread {
-                                    text = "PLATFORM:${currentPlatform()}\n$user"
+    override fun onCreate(savedInstanceState: Bundle?) = super
+        .onCreate(savedInstanceState)
+        .also {
+            setContentView(R.layout.activity_main)
+            layout
+                .addView(
+                    TextView(this)
+                        .apply {
+                            text = "LADING..."
+                            GithubApi()
+                                .users { user ->
+                                    runOnUiThread {
+                                        text = "PLATFORM:${currentPlatform()}\n$user"
+                                    }
                                 }
-                            }
-                    }
-            )
+                        }
+                )
     }
 }

@@ -12,7 +12,9 @@ struct ContentView: View {
                     info = "PLATFORM:" + CurrentPlatformKt.currentPlatform() + "\n" + result
                 }
             }
-        return Text(info)
+        return ScrollView() {
+            Text(info)
+        }
     }
 }
 
